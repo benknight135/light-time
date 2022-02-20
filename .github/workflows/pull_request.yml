@@ -1,0 +1,29 @@
+name: Pull request
+
+on:
+  # Trigger workflow on pull request events
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      # Setup Node JS
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      # Install packages
+      - name: Install packages
+        shell: bash
+        run: npm install
+      # Run tests
+      - name: Test
+        run: npm test

@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  # Trigger workflow on main branch push
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      # Setup Node JS
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      # Install packags
+      - name: Install packages
+        shell: bash
+        run: npm install
+      # Run tests
+      - name: Test
+        run: npm test
