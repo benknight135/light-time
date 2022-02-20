@@ -29,6 +29,23 @@ app.get('/api/version', function (req, res) {
     res.send(sundialtime.VERSION)
 });
 
+app.post('/api/gettime', function (req, res) {
+    let lat = parseFloat(req.body.lat);
+    let long = parseFloat(req.body.long);
+    if (req.body.date) {
+        var date = new Date(parseFloat(req.body.date));
+    } else {
+        var date = new Date();
+    }
+    var ret = sundialtime.gettime(lat, long, date);
+    var resp_data = {
+        sundial_time: ret.sundial_time,
+        day_length: ret.day_length,
+        night_length: ret.night_length
+    }
+    res.json(resp_data);
+});
+
 //The 404 Route (ALWAYS Keep this as the last route)
 app.get('*', function(req, res){
     res.sendFile(path.join(VIEWS_DIR, '404.html'), 404);
