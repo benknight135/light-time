@@ -1,0 +1,12 @@
+{
+    "name": "suntimedev",
+    "version": "0.0.0",
+    "description": "Build suntime packages",
+    "author": "Ben Knight",
+    "license": "ISC",
+    "main": "suntime-web/index.js",
+    "scripts": {
+      "postinstall": "bash ./postinstall.sh",
+      "heroku-prebuild": "node updateversions.js $PROJ_VER"
+    }
+}
