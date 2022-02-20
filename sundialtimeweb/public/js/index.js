@@ -43,15 +43,15 @@ function sundial_get_time() {
         var t = sundial_date.getHours();
         var time_color_square = document.getElementById(`time-color-sqaure`)
         if (t < 6) {
-            time_color_square.class="square night-square";
+            time_color_square.className = "square night-square";
         } else if (t < 10) {
-            time_color_square.class="square morning-square";
+            time_color_square.className = "square morning-square";
         } else if (t < 3) {
-            time_color_square.class="square midday-square";
+            time_color_square.className = "square midday-square";
         } else if (t < 18) {
-            time_color_square.class="square evening-square";
+            time_color_square.className = "square evening-square";
         } else {
-            time_color_square.class="square night-square";
+            time_color_square.className = "square night-square";
         }
     });
 }

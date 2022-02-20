@@ -1,7 +1,7 @@
 image: gitpod/workspace-full
 ports:
 - port: 8080
-  onOpen: open-preview
+  onOpen: open-browser
 tasks:
 - name: install
   init: npm install
