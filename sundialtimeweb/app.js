@@ -30,16 +30,18 @@ app.get('/api/version', function (req, res) {
 });
 
 app.post('/api/gettime', function (req, res) {
-    let lat = req.body.lat;
-    let long = req.body.long;
+    let lat = parseFloat(req.body.lat);
+    let long = parseFloat(req.body.long);
     if (req.body.date) {
-        var date = new Date(req.body.date);
+        var date = new Date(parseFloat(req.body.date));
     } else {
         var date = new Date();
     }
-    var sundial_time = sundialtime.gettime(lat, long, date);
+    var ret = sundialtime.gettime(lat, long, date);
     var resp_data = {
-        time: sundial_time
+        sundial_time: ret.sundial_time,
+        day_length: ret.day_length,
+        night_length: ret.night_length
     }
     res.json(resp_data);
 });

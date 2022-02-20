@@ -28,9 +28,6 @@ const getSunset = (latitude, longitude, date) => {
  *
  */
 var gettime = (latitude, longitude, date = new Date()) => {
-    return date;
-    
-    
     const sunrise = getSunrise(latitude, longitude, date);
     const sunset = getSunset(latitude, longitude, date);
     var tomorrow = new Date(date);
@@ -85,8 +82,14 @@ var gettime = (latitude, longitude, date = new Date()) => {
     var change_time = t_in_12h * time_percentage;
     var new_time = new Date();
     new_time.setTime(start_time.getTime() + change_time);
+
+    return_obj = {
+        sundial_time: new_time,
+        day_length: d_length,
+        night_length: tn_length
+    };
     
-    return new_time;
+    return return_obj;
 }
 
 exports.gettime = gettime;
