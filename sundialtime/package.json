@@ -7,7 +7,7 @@
     "start": "node app.js",
     "test": "mocha"
   },
-  "devDependencies": {
+  "dependencies": {
     "mocha": "^9.0.1"
   },
   "repository": {
