@@ -2,10 +2,10 @@
   "name": "sundialtimedev",
   "version": "0.0.0",
   "description": "Build sundialtime packages",
-  "main": "sundialtime-web/index.js",
+  "main": "sundialtimeweb/index.js",
   "scripts": {
-    "start": "npm start --prefix sundialtime-web",
-    "test": "npm test --prefix sundialtime && npm test --prefix sundialtime-web",
+    "start": "npm start --prefix sundialtimeweb",
+    "test": "npm test --prefix sundialtime && npm test --prefix sundialtimeweb",
     "postinstall": "bash ./postinstall.sh",
     "heroku-prebuild": "node updateversions.js $PROJECT_VERSION"
   },

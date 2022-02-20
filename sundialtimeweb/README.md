@@ -12,7 +12,7 @@ Website demo is available at [sundialtime.herokuapp.com](https://sundialtime.her
 ## Install
 To install the package run the following command:
 ```
-npm install sundialtime-web
+npm install sundialtimeweb
 ```
 
 ## Run
