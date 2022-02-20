@@ -41,15 +41,15 @@ jobs:
       - name: Add to Version file
         shell: bash
         run: |
-          PROJ_VERSION=${{ steps.bump-version.outputs.new_version }}
-          PROJ_VERSION=${PROJ_VERSION:1}
-          echo "PROJ_VER=$PROJ_VER" >> $GITHUB_ENV
+          PROJECT_VERSION=${{ steps.bump-version.outputs.new_version }}
+          PROJECT_VERSION=${PROJECT_VERSION:1}
+          echo "PROJECT_VERSION=$PROJECT_VERSION" >> $GITHUB_ENV
       # Update version of packages to match project version
       - name: Update package versions
         shell: bash
-        run: node updateversions.js $PROJ_VER
+        run: node updateversions.js $PROJECT_VERSION
         env:
-          PROJ_VER: ${{ env.PROJ_VER }}
+          PROJECT_VERSION: ${{ env.PROJECT_VERSION }}
       # Install packages
       - name: Install packages
         shell: bash
@@ -63,7 +63,7 @@ jobs:
         with:
           draft: false
           body_path: release.md
-          tag_name: v${{ env.PROJ_VER }}
+          tag_name: v${{ env.PROJECT_VERSION }}
       # Publish npm packages
       - name: Publish package (suntime)
         shell: bash
@@ -88,7 +88,7 @@ jobs:
           heroku_app_name: "sun-time"
           heroku_email: "benknight135@gmail.com"
         env:
-          HD_PROJ_VER: ${{ env.PROJ_VER }}
+          HD_PROJECT_VERSION: ${{ env.PROJECT_VERSION }}
       # Get git variables
       - name: Get commit variables
         id: commit-vars

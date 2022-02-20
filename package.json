@@ -7,7 +7,7 @@
     "start": "npm start --prefix suntime-web",
     "test": "npm test --prefix suntime && npm test --prefix suntime-web",
     "postinstall": "bash ./postinstall.sh",
-    "heroku-prebuild": "node updateversions.js $PROJ_VER"
+    "heroku-prebuild": "node updateversions.js $PROJECT_VERSION"
   },
   "author": "Ben Knight (benknight135)",
   "license": "ISC"
