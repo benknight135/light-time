@@ -28,6 +28,9 @@ const getSunset = (latitude, longitude, date) => {
  *
  */
 var gettime = (latitude, longitude, date = new Date()) => {
+    return date;
+    
+    
     const sunrise = getSunrise(latitude, longitude, date);
     const sunset = getSunset(latitude, longitude, date);
     var tomorrow = new Date(date);
