@@ -1,2 +1,2 @@
-# true-time
+# TrueTime
 Get the time relative to your actual local
