@@ -26,7 +26,7 @@ jobs:
       # Get latest released version
       - uses: oprypin/find-latest-tag@v1
         with:
-          repository: benknight135/sun-time  # The repository to scan.
+          repository: benknight135/sundial-time  # The repository to scan.
           releases-only: true  # All relevant tags have a GitHub release for them.
         id: latest-tag  # The step ID to refer to later.
       # Generate new release version
@@ -65,17 +65,17 @@ jobs:
           body_path: release.md
           tag_name: v${{ env.PROJECT_VERSION }}
       # Publish npm packages
-      - name: Publish package (suntime)
+      - name: Publish package (sundialtime)
         shell: bash
-        working-directory: ./suntime
+        working-directory: ./sundialtime
         run: |
           npm ci
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Publish package (suntime-web)
+      - name: Publish package (sundialtime-web)
         shell: bash
-        working-directory: ./suntime-web
+        working-directory: ./sundialtime-web
         run: |
           npm ci
           npm publish
@@ -85,7 +85,7 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "sun-time"
+          heroku_app_name: "sundialtime"
           heroku_email: "benknight135@gmail.com"
         env:
           HD_PROJECT_VERSION: ${{ env.PROJECT_VERSION }}

@@ -1,10 +1,10 @@
-const suntime = require("suntime"); // import suntime
+const sundialtime = require("../index.js"); // import sundialtime
 var assert = require('assert'); // assert used for testing
 
-describe('suntime', function() {
+describe('sundialtime', function() {
     describe('version', function() {
         it('get version', function(done) {
-            suntime.VERSION;
+            sundialtime.VERSION;
             done();
         });
     });

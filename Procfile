@@ -1,1 +1,1 @@
-web: npm start --prefix suntime-web
+web: npm start --prefix sundialtime-web
