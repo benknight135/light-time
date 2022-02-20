@@ -8,4 +8,4 @@ npm install sundialtime
 
 Website demo available at [sundialtime.herokuapp.com](https://sundialtime.herokuapp.com/).
 
-This demo is deployed from the [sundialtime-web](https://www.npmjs.com/package/sundialtime-web) npm package.
+This demo is deployed from the [sundialtimeweb](https://www.npmjs.com/package/sundialtimeweb) npm package.

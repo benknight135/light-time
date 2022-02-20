@@ -1,5 +1,5 @@
 # Branches
-This repository has three permanent branches: [main](https://github.com/benknight135/long-time/tree/main), [prod](https://github.com/benknight135/long-time/tree/prod), and [docs](https://github.com/benknight135/long-time/tree/docs).
+This repository has three permanent branches: [main](https://github.com/benknight135/sundial-time/tree/main), [prod](https://github.com/benknight135/sundial-time/tree/prod), and [docs](https://github.com/benknight135/sundial-time/tree/docs).
 
 ## Main
 This branch has the latest code.

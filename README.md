@@ -13,9 +13,9 @@ npm install sundialtime
 ```
 For details on using this package see [here](sundialtime/README.md)
 ```
-npm install sundialtime-web
+npm install sundialtimeweb
 ```
-For details on using this package see [here](sundialtime-web/README.md)
+For details on using this package see [here](sundialtimeweb/README.md)
 
 ## Development
 Please read the guides for [contributors](.github/CONTRIBUTOR.md) and [maintainers](.github/MAINTAINER.md) using this repository.

@@ -1,6 +1,6 @@
 # Sundial Time Web
 
-Website demo of the [sundial-time](https://www.npmjs.com/package/sundialtime) NodeJS package.
+Website demo of the [sundialtime](https://www.npmjs.com/package/sundialtime) NodeJS package.
 
 Get the relative time so that midday is always when the sun is at it's highest.
 
@@ -12,7 +12,7 @@ Website demo is available at [sundialtime.herokuapp.com](https://sundialtime.her
 ## Install
 To install the package run the following command:
 ```
-npm install sundialtime-web
+npm install sundialtimeweb
 ```
 
 ## Run

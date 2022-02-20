@@ -14,7 +14,7 @@ npm install
 cd "$script_path"
 
 ## Web ##
-cd sundialtime-web
+cd sundialtimeweb
 # Build website
 npm install
 

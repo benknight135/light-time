@@ -73,9 +73,9 @@ jobs:
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Publish package (sundialtime-web)
+      - name: Publish package (sundialtimeweb)
         shell: bash
-        working-directory: ./sundialtime-web
+        working-directory: ./sundialtimeweb
         run: |
           npm ci
           npm publish
