@@ -13,7 +13,8 @@
     "suntime": "0.0.0"
   },
   "devDependencies": {
-    "mocha": "^9.0.1"
+    "mocha": "^9.0.1",
+    "suntime": "file:../suntime"
   },
   "repository": {
     "type": "git",

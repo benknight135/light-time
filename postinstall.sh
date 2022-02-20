@@ -11,14 +11,14 @@ cd "$script_path"
 cd suntime
 npm install
 # Link package for local use
-npm link
+# npm link
 
 cd "$script_path"
 
 ## Web ##
 cd suntime-web
 # Link local suntime package
-npm link suntime
+# npm link suntime
 # Build website
 npm install
 
