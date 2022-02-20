@@ -148,6 +148,12 @@ jobs:
           PROJECT_VERSION=$(cat versioning/version.txt)
           echo "$PROJECT_VERSION" > version.txt
           echo "PROJECT_VERSION=$PROJECT_VERSION" >> $GITHUB_ENV
+      # Update version of packages to match project version
+      - name: Update package versions
+        shell: bash
+        run: node updateversions.js $PROJECT_VERSION
+        env:
+          PROJECT_VERSION: ${{ env.PROJECT_VERSION }}
       # Deploy to heroku
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
@@ -157,3 +163,12 @@ jobs:
           appdir: "sundialtimeweb"
         env:
           HD_PROJECT_VERSION: ${{ env.PROJECT_VERSION }}
+          
+  cleanup:
+    needs: [ deploy, deploy-heroku]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: geekyeggo/delete-artifact@v1
+        with:
+          name: version-file-${{ github.sha }}
