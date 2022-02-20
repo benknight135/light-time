@@ -3,6 +3,13 @@
   "version": "0.0.0",
   "description": "Get the time relative to latitude and longitude",
   "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^9.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/benknight135/long-time.git"
@@ -15,8 +22,5 @@
   "bugs": {
     "url": "https://github.com/benknight135/long-time/issues"
   },
-  "homepage": "https://github.com/benknight135/long-time#readme",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  "homepage": "https://github.com/benknight135/long-time#readme"
 }

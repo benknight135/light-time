@@ -2,6 +2,19 @@
   "name": "suntimeweb",
   "version": "0.0.0",
   "description": "Website to show the time based on latitude and longitude",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "body-parser": "^1.19.1",
+    "suntime": "0.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^9.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/benknight135/long-time.git"
@@ -14,15 +27,5 @@
   "bugs": {
     "url": "https://github.com/benknight135/long-time/issues"
   },
-  "homepage": "https://github.com/benknight135/long-time#readme",
-  "main": "index.js",
-  "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "express": "^4.17.2",
-    "body-parser": "^1.19.1",
-    "suntime": "0.0.0"
-  }
+  "homepage": "https://github.com/benknight135/long-time#readme"
 }

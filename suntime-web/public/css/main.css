@@ -1,0 +1,99 @@
+/* Basic styling */
+* {margin: 0; padding: 0; border: 0; vertical-align: baseline;}
+html {box-sizing: border-box;}
+*, *:before, *:after {box-sizing: inherit;}
+html, body {height: 100%; margin: 0;}
+
+
+:root {
+  --font-family: "Segoe UI", sans-serif;
+  --font-size-large: 6vh;
+  --font-size-medium: 3vh;
+  --font-size-small: 2vh;
+}
+
+@media (min-width: 500px) {
+  :root {
+    --font-size-large: 48px;
+    --font-size-medium: 32px;
+    --font-size-small: 24px;
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --font-size-large: 32px;
+    --font-size-medium: 18px;
+    --font-size-small: 14px;
+  }
+}
+
+body {
+  font-family: var(--font-family);
+  background: #1A2933;
+  color: #FFF;
+}
+
+h1 {
+  font-size: var(--font-size-large);
+}
+
+p {
+  color: rgba(209, 209, 209);
+  font-size: var(--font-size-medium);
+}
+
+button {
+  color: rgba(209, 209, 209);
+  background: #253947;
+  font-size: var(--font-size-medium);
+  border-radius: 8px;
+}
+button:hover {
+  background: #2d4557;
+}
+button:active {
+  background: #1f313d;
+}
+
+input[type=submit] {
+  color: rgba(209, 209, 209);
+  background: #253947;
+  font-size: var(--font-size-medium);
+  border-radius: 8px;
+  padding: 5px;
+}
+input:hover {
+  background: #2d4557;
+}
+input:active {
+  background: #1f313d;
+}
+
+input[type=text] {
+  color: rgba(209, 209, 209);
+  background: #253947;
+  font-size: var(--font-size-medium);
+  margin-bottom: 5px;
+}
+
+label {
+  color: rgba(209, 209, 209);
+  font-size: var(--font-size-medium);
+}
+
+/* Styling of window frame and titlebar */
+body {
+  border: 1px solid #48545c;
+  overflow-y: hidden;
+}
+
+textarea {
+  color: rgba(255, 255, 255);
+  background: #253947;
+  resize: none;
+  width: 100%;
+  font-size: var(--font-size-medium);
+  font-family: var(--font-family);
+  padding: 8px;
+}
