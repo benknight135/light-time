@@ -12,17 +12,10 @@ on:
           - major
 
 jobs:
-  deploy:
+  versioning:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
-      # Setup Node JS
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
-          registry-url: 'https://registry.npmjs.org'
       # Get latest released version
       - uses: oprypin/find-latest-tag@v1
         with:
@@ -43,6 +36,37 @@ jobs:
         run: |
           PROJECT_VERSION=${{ steps.bump-version.outputs.new_version }}
           PROJECT_VERSION=${PROJECT_VERSION:1}
+          echo "$PROJECT_VERSION" > version.txt
+      # Upload version file for use in other jobs
+      - name: Archive version file
+        uses: actions/upload-artifact@v2
+        with:
+          name: version-file-${{ github.sha }}
+          path: version.txt
+
+  deploy:
+    needs: [versioning]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      # Setup Node JS
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          registry-url: 'https://registry.npmjs.org'
+      # Get project version
+      - name: Download version file artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: version-file-${{ github.sha }}
+          path: versioning
+      - name: Get project version
+        shell: bash
+        run: |
+          PROJECT_VERSION=$(cat versioning/version.txt)
+          echo "$PROJECT_VERSION" > version.txt
           echo "PROJECT_VERSION=$PROJECT_VERSION" >> $GITHUB_ENV
       # Update version of packages to match project version
       - name: Update package versions
@@ -81,14 +105,6 @@ jobs:
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      # Deploy to heroku
-      - uses: akhileshns/heroku-deploy@v3.12.12
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "sundialtime"
-          heroku_email: "benknight135@gmail.com"
-        env:
-          HD_PROJECT_VERSION: ${{ env.PROJECT_VERSION }}
       # Get git variables
       - name: Get commit variables
         id: commit-vars
@@ -113,3 +129,31 @@ jobs:
           target_branch: main
           github_token: ${{ github.token }}
           message: merged ${{ steps.commit-vars.outputs.sha_short }}
+
+  deploy-heroku:
+    needs: [ deploy ]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      # Get project version
+      - name: Download version file artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: version-file-${{ github.sha }}
+          path: versioning
+      - name: Get project version
+        shell: bash
+        run: |
+          PROJECT_VERSION=$(cat versioning/version.txt)
+          echo "$PROJECT_VERSION" > version.txt
+          echo "PROJECT_VERSION=$PROJECT_VERSION" >> $GITHUB_ENV
+      # Deploy to heroku
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "sundialtime"
+          heroku_email: "benknight135@gmail.com"
+          appdir: "sundialtimeweb"
+        env:
+          HD_PROJECT_VERSION: ${{ env.PROJECT_VERSION }}

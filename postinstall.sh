@@ -10,12 +10,14 @@ cd "$script_path"
 # Build library
 cd sundialtime
 npm install
+npm link
 
 cd "$script_path"
 
 ## Web ##
 cd sundialtimeweb
 # Build website
+npm link sundialtime
 npm install
 
 cd "$script_path"
