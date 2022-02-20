@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/benknight135/long-time.git"
+    "url": "git+https://github.com/benknight135/sundial-time.git"
   },
   "keywords": [
     "time"
@@ -26,7 +26,7 @@
   "author": "Ben Knight (benknight135)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/benknight135/long-time/issues"
+    "url": "https://github.com/benknight135/sundial-time/issues"
   },
-  "homepage": "https://github.com/benknight135/long-time#readme"
+  "homepage": "https://github.com/benknight135/sundial-time#readme"
 }
