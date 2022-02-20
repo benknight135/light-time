@@ -1,14 +1,14 @@
 {
-    "name": "suntimedev",
-    "version": "0.0.0",
-    "description": "Build suntime packages",
-    "main": "suntime-web/index.js",
-    "scripts": {
-      "start": "npm start --prefix suntime-web",
-      "test": "npm test --prefix suntime && npm test --prefix suntime-web",
-      "postinstall": "bash ./postinstall.sh",
-      "heroku-prebuild": "node updateversions.js $PROJ_VER"
-    },
-    "author": "Ben Knight (benknight135)",
-    "license": "ISC"
+  "name": "suntimedev",
+  "version": "0.0.0",
+  "description": "Build suntime packages",
+  "main": "suntime-web/index.js",
+  "scripts": {
+    "start": "npm start --prefix suntime-web",
+    "test": "npm test --prefix suntime && npm test --prefix suntime-web",
+    "postinstall": "bash ./postinstall.sh",
+    "heroku-prebuild": "node updateversions.js $PROJ_VER"
+  },
+  "author": "Ben Knight (benknight135)",
+  "license": "ISC"
 }
