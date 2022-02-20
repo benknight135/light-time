@@ -1,14 +1,20 @@
 {
-  "name": "suntime",
+  "name": "sundialtimeweb",
   "version": "0.0.0",
-  "description": "Get the time relative to latitude and longitude",
+  "description": "Website to show the time based on latitude and longitude",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
     "test": "mocha"
   },
+  "dependencies": {
+    "express": "^4.17.2",
+    "body-parser": "^1.19.1",
+    "sundialtime": "0.0.0"
+  },
   "devDependencies": {
-    "mocha": "^9.0.1"
+    "mocha": "^9.0.1",
+    "sundialtime": "file:../sundialtime"
   },
   "repository": {
     "type": "git",

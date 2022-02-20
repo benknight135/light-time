@@ -1,15 +1,15 @@
-# SunTime
+# Sundial Time
 Get the relative time so that midday is always when the sun is at it's highest.
 
 Time is calculated from latitude and longitude so that 12:00pm is when the sun is highest in the sky.
 
 ## Demo
-Website demo is available at [sun-time.herokuapp.com](https://sun-time.herokuapp.com/)
+Website demo is available at [sundialtime.herokuapp.com](https://sundialtime.herokuapp.com/)
 
 ## Install
 To install the NodeJS package run the following command:
 ```
-npm install suntime
+npm install sundialtime
 ```
 
 ## Run

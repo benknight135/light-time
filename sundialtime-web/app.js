@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require("body-parser");
-const suntime = require("suntime");
+const sundialtime = require("sundialtime");
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -26,7 +26,7 @@ app.get('/api', function (req, res) {
 });
 
 app.get('/api/version', function (req, res) {
-    res.send(suntime.VERSION)
+    res.send(sundialtime.VERSION)
 });
 
 //The 404 Route (ALWAYS Keep this as the last route)

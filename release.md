@@ -3,9 +3,9 @@
 
 Download NodeJS package using:
 ```
-npm install suntime
+npm install sundialtime
 ```
 
-Website demo available [here](https://gramma-counter.herokuapp.com/).
+Website demo available at [sundialtime.herokuapp.com](https://sundialtime.herokuapp.com/).
 
-This demo is deployed from the [suntime-web](https://www.npmjs.com/package/suntime-web) npm package.
+This demo is deployed from the [sundialtime-web](https://www.npmjs.com/package/sundialtime-web) npm package.

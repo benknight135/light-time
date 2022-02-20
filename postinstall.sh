@@ -8,13 +8,13 @@ cd "$script_path"
 
 ## Library ##
 # Build library
-cd suntime
+cd sundialtime
 npm install
 
 cd "$script_path"
 
 ## Web ##
-cd suntime-web
+cd sundialtime-web
 # Build website
 npm install
 

@@ -5,7 +5,7 @@ Midday is always when the sun is at it's highest.
 Time is calculated from latitude and longitude so that 12:00pm is when the sun is highest in the sky.
 
 ## Deployment
-Website demo is available at [sun-time.herokuapp.com](https://sun-time.herokuapp.com/)
+Website demo is available at [sundialtime.herokuapp.com](https://sundialtime.herokuapp.com/)
 
 Npm packages is available for the library and demo website:
 ```

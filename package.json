@@ -1,11 +1,11 @@
 {
-  "name": "suntimedev",
+  "name": "sundialtimedev",
   "version": "0.0.0",
-  "description": "Build suntime packages",
-  "main": "suntime-web/index.js",
+  "description": "Build sundialtime packages",
+  "main": "sundialtime-web/index.js",
   "scripts": {
-    "start": "npm start --prefix suntime-web",
-    "test": "npm test --prefix suntime && npm test --prefix suntime-web",
+    "start": "npm start --prefix sundialtime-web",
+    "test": "npm test --prefix sundialtime && npm test --prefix sundialtime-web",
     "postinstall": "bash ./postinstall.sh",
     "heroku-prebuild": "node updateversions.js $PROJECT_VERSION"
   },

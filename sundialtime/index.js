@@ -8,6 +8,7 @@ exports.VERSION = VERSION;
  *
  */
 var gettime = function (latitude, longitude) {
+    throw {name : "NotImplementedError", message : "Comming soon!"}; 
     return Date.now(); //TODO replace this when function is ready
 }
 
