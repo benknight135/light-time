@@ -1,8 +1,10 @@
 # Sundial Time
 Relive the days of yore, when sundials were king.
 
-Midday is always when the sun is at it's highest.  
-Time is calculated from latitude and longitude so that 12:00pm is when the sun is highest in the sky.
+Time is calculated from latitude and longitude so that:
+- 12:00pm is when the sun is highest in the sky
+- 6am is sunrise
+- 6pm is sunset
 
 ## Deployment
 Website demo is available at [sundialtime.herokuapp.com](https://sundialtime.herokuapp.com/)

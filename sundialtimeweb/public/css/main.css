@@ -97,3 +97,27 @@ textarea {
   font-family: var(--font-family);
   padding: 8px;
 }
+
+.square {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0);
+  width: 1em;
+  height: 1em;
+  background-color: rgb(27, 86, 175);
+}
+
+.midday-square {
+  background-color: rgb(27, 86, 175);
+}
+
+.night-square {
+  background-color: rgb(38, 40, 43);
+}
+
+.morning-square {
+  background-color: rgb(201, 141, 29);
+}
+
+.evening-square {
+  background-color: rgb(180, 92, 34);
+}
