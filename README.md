@@ -1,5 +1,5 @@
 # SunTime
-Get the current time so that midday is always when the sun is at it's highest.
+Get the relative time so that midday is always when the sun is at it's highest.
 
 Time is calculated from latitude and longitude so that 12:00pm is when the sun is highest in the sky.
 
